@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{314EC974-ECA3-4675-963D-FB8AD53D10CE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="InforvixApiRest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MastervixApi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HorseApache.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="InforvixApiRest">
+        <MSBuild Projects="InforvixApiRest.dproj"/>
+    </Target>
+    <Target Name="InforvixApiRest:Clean">
+        <MSBuild Projects="InforvixApiRest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="InforvixApiRest:Make">
+        <MSBuild Projects="InforvixApiRest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MastervixApi">
+        <MSBuild Projects="MastervixApi.dproj"/>
+    </Target>
+    <Target Name="MastervixApi:Clean">
+        <MSBuild Projects="MastervixApi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MastervixApi:Make">
+        <MSBuild Projects="MastervixApi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HorseApache">
+        <MSBuild Projects="HorseApache.dproj"/>
+    </Target>
+    <Target Name="HorseApache:Clean">
+        <MSBuild Projects="HorseApache.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HorseApache:Make">
+        <MSBuild Projects="HorseApache.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="InforvixApiRest;MastervixApi;HorseApache"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="InforvixApiRest:Clean;MastervixApi:Clean;HorseApache:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="InforvixApiRest:Make;MastervixApi:Make;HorseApache:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

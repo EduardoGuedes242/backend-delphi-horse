@@ -1,0 +1,16 @@
+{
+	"name": "kanbana-api",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^3.0.1",
+		"github.com/hashload/horse-basic-auth": "^1.2.1",
+		"github.com/hashload/horse-cors": "^1.0.6",
+		"github.com/hashload/horse-jwt": "^2.0.9",
+		"github.com/hashload/jhonson": "^1.1.6",
+		"github.com/hashload/ragna": "^3.2.2"
+	}
+}
